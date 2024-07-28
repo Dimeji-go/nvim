@@ -12,8 +12,16 @@ return {
 
     telescope.setup({
       defaults = {
-        path_display = {truncate =2},
-        layout_config = {preview_cutoff = 12},
+        layout_strategy = "vertical",
+        layout_config = {
+            vertical = {
+                width = 0.9, 
+                height = 0.9,
+                preview_height = 0.6,
+               preview_cutoff = 0
+            }
+        },
+            path_display = {truncate =2},
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -35,3 +43,4 @@ return {
     keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
   end,
 }
+

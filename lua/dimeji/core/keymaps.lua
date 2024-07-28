@@ -35,11 +35,7 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
-keymap.set("n", "<leader>bp", "<Cmd>BufferPrevious<CR>", {desc = "Move to previous buffer" })
-keymap.set("n", "<leader>bn", "<Cmd>BufferNext<CR>", {desc = "Move to next buffer" })
-keymap.set("n", "<leader>bi", "<Cmd>BufferPin<CR>",{ desc = "Unpin/Pin buffer" })
-keymap.set("n", "<leader>bc", "<Cmd>BufferClose<CR>", {desc = "Close buffer" })
-keymap.set("n", "<leader>br", "<Cmd>BufferRestore<CR>",{ desc = "Restore buffer" })
+keymap.set("n", "<leader>b", ":Telescope buffers<CR>", {desc = "Move to previous buffer" })
 vim.api.nvim_set_keymap('n', '<leader>hs', ':lua require"gitsigns".stage_hunk()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>hr', ':lua require"gitsigns".reset_hunk()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<leader>hs', [[:<C-U>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>]], { noremap = true, silent = true })
