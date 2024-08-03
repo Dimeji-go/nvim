@@ -14,6 +14,7 @@ return {
         css = { "prettier" },
         html = { "prettier" },
         json = { "prettier" },
+        go = { "golangci-lint" },
         yaml = { "prettier" },
         markdown = { "prettier" },
         graphql = { "prettier" },

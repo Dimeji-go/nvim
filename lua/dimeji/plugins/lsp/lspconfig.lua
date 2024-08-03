@@ -95,6 +95,9 @@ return {
     lspconfig["pyright"].setup({
       capabilities = capabilities,
     })
+    lspconfig["gopls"].setup({
+      capabilities = capabilities,
+    })
   end
 }
     
