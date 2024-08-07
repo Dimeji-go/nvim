@@ -28,6 +28,8 @@ keymap.set("n", "<M-q>", ":q!<CR>", { desc = "Force quit" }) -- make split windo
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- close current split window
 keymap.set("n", "<leader>w", ":w!<CR>", { desc = "Save file" }) -- close current split window
+keymap.set("n", "<leader>sv", ":MarkdownPreview<CR>", { desc = "Start Markdown Preview " }) -- close current split window
+keymap.set("n", "<leader>sx", ":MarkdownPreviewStop<CR>", { desc = "Stop Markdown Preview " }) -- close current split window
 keymap.set("n", "<leader>q", ":wq!<CR>", { desc = "Save and quit" }) -- close current split window
 
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
