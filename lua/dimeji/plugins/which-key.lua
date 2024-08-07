@@ -1,6 +1,6 @@
 return {
-  "folke/which-key.nvim",
-  version = '1.6.0',
+  {"Dimeji-go/which-key.nvim",
+  branch = 'main',
   event = "VeryLazy",
   init = function()
     vim.o.timeout = true
@@ -23,5 +23,4 @@ return {
 
 
   end,
-}
-
+}}
