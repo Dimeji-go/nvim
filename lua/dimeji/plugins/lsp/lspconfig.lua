@@ -82,6 +82,10 @@ return {
     })
 
     -- configure css server
+    lspconfig["html"].setup({
+      capabilities = capabilities,
+    })
+
     lspconfig["cssls"].setup({
       capabilities = capabilities,
     }) 
