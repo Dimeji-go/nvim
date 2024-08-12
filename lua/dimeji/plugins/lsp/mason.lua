@@ -30,6 +30,7 @@ return {
         "tsserver",
         "emmet_ls",
         "cssls",
+        "html",
         "pyright",
       },
       -- auto-install configured servers (with lspconfig)
