@@ -47,4 +47,17 @@ opt.splitbelow = true -- split horizontal window to the bottom
 vim.o.swapfile = false
 
 
--- Auto-recover and delete the swap file
+if vim.fn.has("wsl") then
+    vim.g.clipboard = {
+        name = "clip.exe (Copy Only)",
+        copy = {
+            ["+"] = "clip.exe",
+            ["*"] = "clip.exe"
+        },
+        paste = {
+            ["+"] = "clip.exe",
+            ["*"] = "clip.exe"
+        },
+        cache_enabled = true
+    }
+end
