@@ -1,4 +1,3 @@
-vim.g.python3_host_prog = os.getenv("HOME") .. "/.local/venv/nvim/bin/python"
 local opt = vim.opt -- for conciseness
 -- line numbers
 vim.wo.relativenumber = true -- shows absolute line number on cursor line (when relative number is on)
