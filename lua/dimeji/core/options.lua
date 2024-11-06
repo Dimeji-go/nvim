@@ -1,5 +1,6 @@
 local opt = vim.opt -- for conciseness
 -- line numbers
+vim.wo.number = true
 vim.wo.relativenumber = true -- shows absolute line number on cursor line (when relative number is on)
 opt.autoread = true
 
