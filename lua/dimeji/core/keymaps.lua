@@ -34,7 +34,7 @@ keymap.set("n", "<leader>q", ":wq!<CR>", { desc = "Save and quit" }) -- close cu
 
 keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" }) -- open new tab
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" }) -- close current tab
-keymap.set('n', '<S-h>', "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>", { noremap = true, silent = true })
+keymap.set('n', '<leader>b', "<cmd>Telescope buffers sort_mru=true sort_lastused=true initial_mode=normal<cr>", { noremap = true, silent = true })
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" }) --  go to next tab
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" }) --  go to previous tab
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" }) --  move current buffer to new tab
@@ -51,10 +51,5 @@ vim.api.nvim_set_keymap('n', '<leader>tb', ':lua require"gitsigns".toggle_curren
 vim.api.nvim_set_keymap('n', '<leader>hd', ':lua require"gitsigns".diffthis()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>hD', ':lua require"gitsigns".diffthis("~")<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>td', ':lua require"gitsigns".toggle_deleted()<CR>', { noremap = true, silent = true })
-keymap.set("n", "<leader>bp", "<Cmd>BufferPrevious<CR>", {desc = "Move to previous buffer" })
-keymap.set("n", "<leader>bn", "<Cmd>BufferNext<CR>", {desc = "Move to next buffer" })
-keymap.set("n", "<leader>bi", "<Cmd>BufferPin<CR>",{ desc = "Unpin/Pin buffer" })
-keymap.set("n", "<leader>bc", "<Cmd>BufferClose<CR>", {desc = "Close buffer" })
-keymap.set("n", "<leader>br", "<Cmd>BufferRestore<CR>",{ desc = "Restore buffer" })
 
     
