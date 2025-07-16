@@ -18,6 +18,7 @@ return {
         yaml = { "prettierd" },
         markdown = { "prettierd" },
         graphql = { "prettierd" },
+        php = { "php_cs_fixer" },
         liquid = { "prettierd" },
         python = { "isort", "black" },
       },

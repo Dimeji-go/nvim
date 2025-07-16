@@ -36,6 +36,14 @@ return {
       automatic_installation = true, -- not the same as ensure_installed
     })
 
+    mason_lspconfig.setup {
+    automatic_enable = {
+        exclude = {
+            "java",
+        }
+    }
+}
+
     mason_tool_installer.setup({
       ensure_installed = {
         "prettierd", -- prettier formatter

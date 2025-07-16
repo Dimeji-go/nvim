@@ -47,4 +47,9 @@ opt.splitbelow = true -- split horizontal window to the bottom
 vim.o.swapfile = false
 
 
-
+vim.api.nvim_create_autocmd('FileType',{
+    pattern = 'java',
+    callback = function(args)
+      require'dimeji.jdtls_setup'.setup()
+    end
+})

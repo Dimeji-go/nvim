@@ -2,7 +2,12 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
+    {"hrsh7th/cmp-nvim-lsp", opts = {
+      sources = {
+        {name = 'nvim_lua'}
+      }
+    }},
+    'mfussenegger/nvim-jdtls',
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
   },
@@ -69,6 +74,19 @@ return {
 
     -- used to enable autocompletion (assign to every lsp server config)
     local capabilities = cmp_nvim_lsp.default_capabilities()
+    local function setup_diags()
+      vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+        vim.lsp.diagnostic.on_publish_diagnostics,
+        {
+          virtual_text = false,
+          signs = true,
+          update_in_insert = false,
+          underline = true,
+        }
+      )
+    end
+
+    setup_diags()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
@@ -77,31 +95,46 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end    -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
-      capabilities = capabilities,
-    })
+lspconfig["tsserver"].setup({
+  capabilities = capabilities,
+  filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
+})
 
-    -- configure css server
-    lspconfig["html"].setup({
-      capabilities = capabilities,
-    })
+-- Configure HTML
+lspconfig["html"].setup({
+  capabilities = capabilities,
+  filetypes = { "html" },
+})
 
-    lspconfig["cssls"].setup({
-      capabilities = capabilities,
-    }) 
+-- Configure CSS (cssls)
+lspconfig["cssls"].setup({
+  capabilities = capabilities,
+  filetypes = { "css", "scss", "sass", "less" },
+})
 
-    -- configure emmet language server
-    lspconfig["emmet_ls"].setup({
-      capabilities = capabilities,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-    })
+-- Configure Emmet (emmet_ls)
+lspconfig["emmet_ls"].setup({
+  capabilities = capabilities,
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte", "php" },
+})
 
-    lspconfig["pyright"].setup({
-      capabilities = capabilities,
-    })
-    lspconfig["gopls"].setup({
-      capabilities = capabilities,
-    })
+-- Configure Python (pyright)
+lspconfig["pyright"].setup({
+  capabilities = capabilities,
+  filetypes = { "python" },
+})
+
+-- Configure Go (gopls)
+lspconfig["gopls"].setup({
+  capabilities = capabilities,
+  filetypes = { "go", "gomod", "gowork" },
+})
+
+-- Configure PHP (intelephense)
+lspconfig["intelephense"].setup({
+  capabilities = capabilities,
+  filetypes = { "php" },
+})
   end
 }
     
