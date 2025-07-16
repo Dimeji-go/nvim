@@ -1,0 +1,42 @@
+.
+├── init.lua
+├── lazy-lock.json
+├── lua
+│   └── dimeji
+│       ├── core
+│       │   ├── init.lua
+│       │   ├── keymaps.lua
+│       │   ├── largefile.lua
+│       │   └── options.lua
+│       ├── jdtls_setup.lua
+│       ├── lazy.lua
+│       └── plugins
+│           ├── alpha-nvim.lua
+│           ├── colorizer.lua
+│           ├── colorscheme.lua
+│           ├── colors.lua
+│           ├── dressing.lua
+│           ├── format.lua
+│           ├── gitsigns.lua
+│           ├── impatient.lua
+│           ├── indent.lua
+│           ├── init.lua
+│           ├── lsp
+│           │   ├── lspconfig.lua
+│           │   ├── mason.lua
+│           │   └── none-ls.lua
+│           ├── lualine.lua
+│           ├── multi-line.lua
+│           ├── nvim-autopairs.lua
+│           ├── nvim-cmp.lua
+│           ├── nvim-surround.lua
+│           ├── nvim-tree.lua
+│           ├── nvim-treesitter.lua
+│           ├── nvim-web-devicons.lua
+│           ├── telescope.lua
+│           ├── undo.lua
+│           ├── vim-maximizer.lua
+│           └── which-key.lua
+└── out.txt
+
+5 directories, 34 files
