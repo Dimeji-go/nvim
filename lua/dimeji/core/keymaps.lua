@@ -52,4 +52,9 @@ vim.api.nvim_set_keymap('n', '<leader>hd', ':lua require"gitsigns".diffthis()<CR
 vim.api.nvim_set_keymap('n', '<leader>hD', ':lua require"gitsigns".diffthis("~")<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>td', ':lua require"gitsigns".toggle_deleted()<CR>', { noremap = true, silent = true })
 
-    
+
+keymap.set("n", "<Up>", "<C-w>k", { noremap = true, silent = true })   
+keymap.set("n", "<Down>", "<C-w>j", { noremap = true, silent = true })
+keymap.set("n", "<Left>", "<C-w>h", { noremap = true, silent = true })
+keymap.set("n", "<Right>", "<C-w>l", { noremap = true, silent = true })
+keymap.set("n", "<leader>w", ":update<CR>", { noremap = true, silent = true })

@@ -135,6 +135,11 @@ lspconfig["intelephense"].setup({
   capabilities = capabilities,
   filetypes = { "php" },
 })
+lspconfig["clangd"].setup({
+  init_options = {
+    compilationDatabasePath = "./build", -- Adjust path if compile_commands.json is elsewhere
+  },
+})
   end
 }
     
