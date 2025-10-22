@@ -40,6 +40,9 @@ return {
         opts.desc = "Show LSP definitions"
         keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
 
+        opts.desc = "Show LSP symbols"
+        keymap.set("n", "gs", "<cmd>Telescope lsp_document_symbols<CR>", opts) -- show lsp symbols
+
         opts.desc = "Show LSP implementations"
         keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
@@ -134,6 +137,10 @@ lspconfig["gopls"].setup({
 lspconfig["intelephense"].setup({
   capabilities = capabilities,
   filetypes = { "php" },
+})
+lspconfig["marksman"].setup({
+  on_attach = LspOnAttach,
+  capabilities = LspCapabilities,
 })
 lspconfig["clangd"].setup({
   init_options = {

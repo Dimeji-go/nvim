@@ -58,3 +58,5 @@ keymap.set("n", "<Down>", "<C-w>j", { noremap = true, silent = true })
 keymap.set("n", "<Left>", "<C-w>h", { noremap = true, silent = true })
 keymap.set("n", "<Right>", "<C-w>l", { noremap = true, silent = true })
 keymap.set("n", "<leader>w", ":update<CR>", { noremap = true, silent = true })
+-- For init.lua
+vim.g.surround_111 = "**\r**"
